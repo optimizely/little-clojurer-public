@@ -3,6 +3,11 @@
             [little-clojurer.chapter1 :refer :all]))
 
 (deftest car-test
-  (testing "FIXME, I fail."
+  (testing
     (is (= :a (car '(:a))))
     (is (= 1 (car '(1 :b))))))
+
+(deftest cdr-test
+  (testing
+    (is (= '() (cdr '(:a))))
+    (is (= '(:b) (cdr '(1 :b))))))
