@@ -24,8 +24,8 @@ We will create a new file in these folders for each chapter of the Little Scheme
 For this chapter we will need to define the functions `cdr`, `null?` and `atom?`.
 
 Note how we implment `car` by merely mapping it to `first`. You should be able to
-find Clojure primitive functions that map to `cdr` and `null?`.  Atom is slightly
-more complicated.
+find Clojure primitive functions that map to `cdr` and `null?`.  `atom?` is only
+slightly more complicated.
 
 # Merging to Master
 
