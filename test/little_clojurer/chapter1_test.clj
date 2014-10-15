@@ -11,3 +11,19 @@
   (testing
     (is (= '() (cdr '(:a))))
     (is (= '(:b) (cdr '(1 :b))))))
+
+(deftest null?-test
+  (testing
+    (is (not (null? '(:a))))
+    (is (not (null? '(1))))
+    (is (null? '()))
+    (is (null? nil))))
+
+(deftest atom?-test
+  (testing
+    (is (not (atom? '())))
+    (is (not (atom? '(1))))
+    (is (not (atom? [1])))
+    (is (atom? nil))
+    (is (atom? 1))
+    (is (atom? :a))))
