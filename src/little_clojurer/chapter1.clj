@@ -2,8 +2,14 @@
 
 (def car first)
 
-(defn cdr [x] nil)
+(defn cdr
+  "Return all items in a list except the first item."
+  [x] nil)
 
-(defn null? [x] nil)
+(defn null?
+  "Return true iff x is an empty list."
+  [x] nil)
 
-(defn atom? [x] nil)
+(defn atom?
+  "Return true if x is not a collection."
+  [x] nil)
