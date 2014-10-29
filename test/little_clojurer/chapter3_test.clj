@@ -9,3 +9,39 @@
     (is (= '() (rember 5 '())))
     (is (= '() (rember :a '())))
     (is (= '(2 1 3 4 1) (rember 1 '(1 2 1 3 4 1))))))
+
+
+(deftest firsts
+  (testing))
+
+
+(deftest insertR
+  (testing))
+
+
+(deftest insertL
+  (testing))
+
+
+(deftest subst
+  (testing))
+
+
+(deftest subst2
+  (testing))
+
+
+(deftest multirember
+  (testing))
+
+
+(deftest multiinsertR
+  (testing))
+
+
+(deftest multiinsertL
+  (testing))
+
+
+(deftest multisubst
+  (testing))
