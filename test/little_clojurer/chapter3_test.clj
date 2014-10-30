@@ -63,4 +63,8 @@
 
 (deftest multisubst-test
   (testing
-    (is true)))
+    (is (= '() (multisubst :new :old '())))
+    (is (= '(:x :y :z) (multisubst :new :old '(:x :y :z))))
+    (is (= '(:new :new :new :new) (multisubst :new :old '(:old :old :old :old))))
+    (is (= '(:new :new :new :new) (multisubst :new :old '(:old :old :old :new))))
+    (is (= '(:x :new :new) (multisubst :new :old '(:x :old :old))))))
