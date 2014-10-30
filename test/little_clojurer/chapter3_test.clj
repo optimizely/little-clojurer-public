@@ -11,37 +11,48 @@
     (is (= '(2 1 3 4 1) (rember 1 '(1 2 1 3 4 1))))))
 
 
-(deftest firsts
-  (testing))
+(deftest firsts-test
+  (testing
+    (is (= '(1 2 3 4) (firsts '((1 2) (2 3) (3 4) (4 5)))))
+    (is (= '() (firsts '())))
+    (is (= '(()) (firsts '((())))))))
 
 
-(deftest insertR
-  (testing))
+(deftest insertR-test
+  (testing
+    (is true)))
 
 
-(deftest insertL
-  (testing))
+(deftest insertL-test
+  (testing
+    (is true)))
 
 
-(deftest subst
-  (testing))
+(deftest subst-test
+  (testing
+    (is true)))
 
 
-(deftest subst2
-  (testing))
+(deftest subst2-test
+  (testing
+    (is true)))
 
 
-(deftest multirember
-  (testing))
+(deftest multirember-test
+  (testing
+    (is true)))
 
 
-(deftest multiinsertR
-  (testing))
+(deftest multiinsertR-test
+  (testing
+    (is true)))
 
 
-(deftest multiinsertL
-  (testing))
+(deftest multiinsertL-test
+  (testing
+    (is true)))
 
 
-(deftest multisubst
-  (testing))
+(deftest multisubst-test
+  (testing
+    (is true)))
