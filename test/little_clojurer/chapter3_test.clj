@@ -30,7 +30,9 @@
 
 (deftest subst-test
   (testing
-    (is true)))
+    (is (= '(:a :x :c) (subst :x :b '(:a :b :c))))
+    (is (= '() (subst :x :b '())))
+    (is (= '(:a :x :b :c :b) (subst :x :b '(:a :b :b :c :b))))))
 
 
 (deftest subst2-test
