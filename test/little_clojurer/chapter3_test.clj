@@ -37,7 +37,10 @@
 
 (deftest subst2-test
   (testing
-    (is true)))
+    (is (= '(:a :x :c) (subst2 :x :b :c '(:a :b :c))))
+    (is (= '() (subst2 :x :b :c '())))
+    (is (= '(:a :b :b :x :b) (subst2 :x :x :c '(:a :b :b :c :b))))
+    (is (= '(:a :x :b :c :b) (subst2 :x :b :c '(:a :b :b :c :b))))))
 
 
 (deftest multirember-test
