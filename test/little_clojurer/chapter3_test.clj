@@ -45,7 +45,10 @@
 
 (deftest multirember-test
   (testing
-    (is true)))
+    (is (= '() (multirember :a '(:a :a :a :a :a))))
+    (is (= '() (multirember :x '())))
+    (is (= '(:a :b :c) (multirember :x '(:a :b :c))))
+    (is (= '(:b :c :d) (multirember :a '(:a :b :a :c :a :a :d :a))))))
 
 
 (deftest multiinsertR-test
