@@ -20,12 +20,18 @@
 
 (deftest insertR-test
   (testing
-    (is true)))
+    (is (= '(1 2 1 3) (insertR 1 2 '(1 2 3))))
+    (is (= '(1 1 3) (insertR 1 2 '(1 1 3))))
+    (is (= '(2 1 2 3) (insertR 1 2 '(2 2 3))))
+    (is (= '() (insertR 1 2 '())))))
 
 
 (deftest insertL-test
   (testing
-    (is true)))
+    (is (= '(1 1 2 3) (insertL 1 2 '(1 2 3))))
+    (is (= '(1 1 3) (insertL 1 2 '(1 1 3))))
+    (is (= '(1 2 2 3) (insertL 1 2 '(2 2 3))))
+    (is (= '() (insertL 1 2 '())))))
 
 
 (deftest subst-test
@@ -53,12 +59,18 @@
 
 (deftest multiinsertR-test
   (testing
-    (is true)))
+    (is (= '(1 2 1 3) (multiinsertR 1 2 '(1 2 3))))
+    (is (= '(1 1 3) (multiinsertR 1 2 '(1 1 3))))
+    (is (= '(2 1 2 1 3) (multiinsertR 1 2 '(2 2 3))))
+    (is (= '() (multiinsertR 1 2 '())))))
 
 
 (deftest multiinsertL-test
   (testing
-    (is true)))
+    (is (= '(1 1 2 3) (multiinsertL 1 2 '(1 2 3))))
+    (is (= '(1 1 3) (multiinsertL 1 2 '(1 1 3))))
+    (is (= '(1 2 1 2 3) (multiinsertL 1 2 '(2 2 3))))
+    (is (= '() (multiinsertL 1 2 '())))))
 
 
 (deftest multisubst-test
