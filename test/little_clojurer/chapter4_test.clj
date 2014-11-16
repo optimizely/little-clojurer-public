@@ -44,3 +44,12 @@
     (is (= '() (no-nums (range 4))))
     (is (= '(:a) (no-nums '(1 2 3 :a 4 5))))
     (is (= '(:a :b) (no-nums '(1 2 3 :a 4 5 :b))))))
+
+
+(deftest all-nums-test
+  (testing
+    (is (= '() (all-nums '())))
+    (is (= '() (all-nums '(:a :b :c))))
+    (is (= (range 4) (all-nums (range 4))))
+    (is (= '(1 2 3 4 5) (all-nums '(1 2 3 :a 4 5))))
+    (is (= '(1 2 3 4 5) (all-nums '(1 2 3 :a 4 5 :b))))))
