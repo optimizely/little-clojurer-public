@@ -27,3 +27,12 @@
     (is (= 1 (pick 1 (range 10))))
     (is (= 5 (pick 5 (range 10))))
     (is (= :b (pick 1 '(:a :b :c))))))
+
+
+(deftest rempick-test
+  (testing
+    (is (= '(0 1 3) (rempick 2 (range 4))))
+    (is (= '(1 2 3) (rempick 0 (range 4))))
+    (is (= '() (rempick 0 '())))
+    (is (= '() (rempick 0 '(:a))))
+    (is (= '(:b) (rempick 0 '(:a :b))))))
