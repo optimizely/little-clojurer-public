@@ -53,3 +53,13 @@
     (is (= (range 4) (all-nums (range 4))))
     (is (= '(1 2 3 4 5) (all-nums '(1 2 3 :a 4 5))))
     (is (= '(1 2 3 4 5) (all-nums '(1 2 3 :a 4 5 :b))))))
+
+
+(deftest occur-test
+  (testing
+    (is (= 0 (occur :a '())))
+    (is (= 0 (occur :a '(1 2 3 4 5 6))))
+    (is (= 1 (occur :a '(1 2 3 :a 4 5 6))))
+    (is (= 1 (occur :a '(:a))))
+    (is (= 3 (occur :a '(:a :a :a))))
+    (is (= 1 (occur 1 (range 10))))))
