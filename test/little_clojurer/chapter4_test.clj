@@ -36,3 +36,11 @@
     (is (= '() (rempick 0 '())))
     (is (= '() (rempick 0 '(:a))))
     (is (= '(:b) (rempick 0 '(:a :b))))))
+
+
+(deftest no-nums-test
+  (testing
+    (is (= '() (no-nums '())))
+    (is (= '() (no-nums (range 4))))
+    (is (= '(:a) (no-nums '(1 2 3 :a 4 5))))
+    (is (= '(:a :b) (no-nums '(1 2 3 :a 4 5 :b))))))
