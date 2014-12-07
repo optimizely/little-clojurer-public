@@ -10,7 +10,7 @@
     (is (= '((() :y)) (rember* :x '(:x ((:x) :y) :x))))
     (is (= '((() :y) (:z :z (:z))) (rember* :x '(:x ((:x) :y) :x (:z :z (:z :x))))))
     (is (= '(()) (rember* :x '(()))))
-    ))
+  ))
 
 (deftest insertR*-test
   (testing
@@ -20,4 +20,14 @@
     (is (= '((:old :new) :new (:old :new)) (insertR* :new :old '((:old) :new (:old)))))
     (is (= '((:old :new) :new (:old :new)) (insertR* :new :old '((:old) :new (:old)))))
     (is (= '((:old :new) :new () (:old :new)) (insertR* :new :old '((:old) :new () (:old)))))
-    ))
+  ))
+
+(deftest occur*-test
+  (testing
+    (is (= 0 (occur* :a '())))
+    (is (= 0 (occur* :a '((())))))
+    (is (= 0 (occur* :a '((:b ()) :b))))
+    (is (= 1 (occur* :a '((:b (:a)) :b))))
+    (is (= 3 (occur* :a '((:a (:a)) :a :b))))
+    (is (= 3 (occur* :a '(() (:a (:a)) :a :b))))
+  ))
