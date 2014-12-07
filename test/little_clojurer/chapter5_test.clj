@@ -41,3 +41,13 @@
     (is (= '((:new) :new ( :new)) (subst* :new :old '((:old) :new (:old)))))
     (is (= '((:new) :new () (:new)) (subst* :new :old '((:old) :new () (:old)))))
   ))
+
+(deftest member*-test
+  (testing
+    (is (= false (member* :a '())))
+    (is (= false (member* :a '((())))))
+    (is (= false (member* :a '((:b ()) :b))))
+    (is (= true (member* :a '((:b (:a)) :b))))
+    (is (= true (member* :a '((:a (:a)) :a :b))))
+    (is (= true (member* :a '(() ((:a)) :a :b))))
+  ))
