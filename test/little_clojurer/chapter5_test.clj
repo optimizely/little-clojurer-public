@@ -31,3 +31,13 @@
     (is (= 3 (occur* :a '((:a (:a)) :a :b))))
     (is (= 3 (occur* :a '(() (:a (:a)) :a :b))))
   ))
+
+(deftest subst*-test
+  (testing
+    (is (= '() (subst* :new :old '())))
+    (is (= '(:new) (subst* :new :old '(:old))))
+    (is (= '((:new)) (subst* :new :old '((:old)))))
+    (is (= '((:new) :new (:new)) (subst* :new :old '((:old) :new (:old)))))
+    (is (= '((:new) :new ( :new)) (subst* :new :old '((:old) :new (:old)))))
+    (is (= '((:new) :new () (:new)) (subst* :new :old '((:old) :new () (:old)))))
+  ))
