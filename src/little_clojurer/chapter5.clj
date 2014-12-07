@@ -36,3 +36,10 @@
   "finds the leftmost atom in l deeply recursively. l cannot be empty and cannot contain empty lists."
   [l]
   nil)
+
+
+; The Tyler Challenge: for bonus fun reimplement the comp function
+; comp takes a variable number of functions and creates a function applies them
+; from right-to-left.
+; see http://www.4clojure.com/problem/58
+(def bonus comp)

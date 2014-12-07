@@ -58,3 +58,11 @@
     (is (= :a (leftmost '(:a :b :c :d))))
     (is (= :a (leftmost '((((:a))) (:b) :c :d))))
   ))
+
+(deftest bonus-test
+  (testing
+    (is (= [3 2 1] ((bonus rest reverse) [1 2 3 4])))
+    (is (= 5 ((bonus (partial + 3) second) [1 2 3 4])))
+    (is (= true ((bonus zero? #(mod % 8) +) 3 5 7 9)))
+    (is (= "HELLO" ((bonus #(.toUpperCase %) #(apply str %) take) 5 "hello world")))
+  ))
