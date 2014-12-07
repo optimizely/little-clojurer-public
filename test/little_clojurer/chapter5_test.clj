@@ -51,3 +51,10 @@
     (is (= true (member* :a '((:a (:a)) :a :b))))
     (is (= true (member* :a '(() ((:a)) :a :b))))
   ))
+
+(deftest leftmost-test
+  (testing
+    (is (= :a (leftmost '(:a))))
+    (is (= :a (leftmost '(:a :b :c :d))))
+    (is (= :a (leftmost '((((:a))) (:b) :c :d))))
+  ))
